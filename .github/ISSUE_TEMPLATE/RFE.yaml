@@ -12,3 +12,10 @@ body:
         ---
         
         To address this issue we need some additional information.
+  - type: textarea
+    id: rfe-description
+    attributes:
+      label: Describe suggested feature
+      description: Describe which feature you would like and how NCCL users will benefit from it.
+    validations:
+      required: true
