@@ -1,0 +1,40 @@
+name: GitHub Issue Template
+description: File an issue
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before reporting a new issue, please search for the behaviour in the existing issues.
+        
+        ---
+        
+        To address this issue we need some additional information.
+  - type: input
+    id: nccl_version
+    attributes:
+      label: NCCL Version
+      description: "NCCL reports its version string in the debug logs. You can also determine the version if you know which library was used by running `strings libnccl.so | grep 'NCCL version'`."
+      placeholder: "e.g. 2.27.1+cuda12.8"
+    validations:
+      required: true
+
+  - type: textarea
+    id: issue-description
+    attributes:
+      label: Error Message
+      description: What was the first error message in the logs?
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      description: Which steps do we need to take to reproduce this error? Please include all relevant software version numbers.
+
+  - type: textarea
+    id: log
+    attributes:
+      label: NCCL_DEBUG=info
+      description: Please post the output of NCCL_DEBUG=info or upload log files.
+      render: shell
