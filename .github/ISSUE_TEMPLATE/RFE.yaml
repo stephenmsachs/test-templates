@@ -10,8 +10,6 @@ body:
         Before reporting a new issue, please search for the behaviour in the existing issues.
         
         ---
-        
-        To address this issue we need some additional information.
   - type: textarea
     id: rfe-description
     attributes:
