@@ -1,5 +1,5 @@
-name: GitHub Issue Template
-description: File an issue
+name: NCCL issue or bug
+description: Report an issue
 body:
   - type: markdown
     attributes:
@@ -35,6 +35,6 @@ body:
   - type: textarea
     id: log
     attributes:
-      label: NCCL_DEBUG=info
-      description: Please post the output of NCCL_DEBUG=info or upload log files.
+      label: Debug Log Files
+      description: Please post the output of NCCL_DEBUG=info or upload log files. Ideally also set NCCL_DEBUG_FILE=ncclDebug.%h.%p to produce one file per rank.
       render: shell
