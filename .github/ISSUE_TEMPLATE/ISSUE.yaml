@@ -1,5 +1,5 @@
 name: NCCL issue or bug
-description: Report an issue
+description: Report an issue or failure when running NCCL code
 title: "[Issue]: "
 labels: ["triage"]
 
@@ -33,7 +33,7 @@ body:
     id: repro
     attributes:
       label: Steps to reproduce
-      description: Which steps do we need to take to reproduce this error? Please include all relevant software version numbers.
+      description: Which steps do we need to take to reproduce this error? Please include all relevant software version numbers. The easier we can reproduce on our side the more likely we are to be able to solve it in a timely manner.
 
   - type: textarea
     id: log
