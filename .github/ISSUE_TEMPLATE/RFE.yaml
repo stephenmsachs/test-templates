@@ -1,0 +1,14 @@
+name: NCCL request for enhancement
+description: Request for enhancement
+title: "[RFE]: "
+labels: ["enhacement"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Before reporting a new issue, please search for the behaviour in the existing issues.
+        
+        ---
+        
+        To address this issue we need some additional information.

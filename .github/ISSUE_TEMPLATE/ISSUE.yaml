@@ -1,5 +1,8 @@
 name: NCCL issue or bug
 description: Report an issue
+title: "[Issue]: "
+labels: ["triage"]
+
 body:
   - type: markdown
     attributes:
