@@ -2,8 +2,7 @@ name: Close Old Issues
 
 on:
   schedule:
-#    - cron: '30 2 * * *'  # Runs daily at 02:30 UTC
-    - cron: '* * * * *'  # Runs every minute
+    - cron: '30 2 * * *'  # Runs daily at 02:30 UTC
   workflow_dispatch:
 
 permissions:
@@ -25,7 +24,7 @@ jobs:
         run: npm install @octokit/rest
 
       - name: Run close-old-issues script
-        run: node .github/scripts/close-old-issues.js
+        run: node .github/workflows/close-old-issues.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPO_OWNER: ${{ github.repository_owner }}
