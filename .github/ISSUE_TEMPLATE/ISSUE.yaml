@@ -57,9 +57,9 @@ body:
   - type: textarea
     id: repro
     attributes:
-      label: Steps to reproduce
+      label: Minimal reproducer and steps
       description: |
-        * Which steps do we need to take to reproduce this error? Please include all relevant software version numbers.
+        * Which steps are necessary to reproduce this error? Please include all relevant software versions.
         * Is this an intermittent issue? If it is, how frequently does it happen?
         * Is there a previous passing setup, e.g. older NCCL version?
 
