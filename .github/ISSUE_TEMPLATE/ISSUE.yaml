@@ -51,7 +51,7 @@ body:
     attributes:
       label: Which platform are you using?
       description: |
-        * Which GPU architecture, network hardware and topology are you using?
+        * Which GPU architecture, network hardware and topology are you using (reported by `nvidia-smi`, `nvidia-smi topo -m`, `ibstatus`)?
         * Are you running on bare-metal, containers, and/or in the cloud?
         * Does this issue occur at a specific rank/node count?
 
@@ -72,4 +72,4 @@ body:
     attributes:
       label: Debug Log Files
       description: |
-        Please attach NCCL info logs (rerun workload after setting export NCCL_DEBUG=INFO and NCCL_DEBUG_FILE=ncclDebug.%h.%p to produce one file per rank).
+        Please attach NCCL info logs (rerun workload after setting export `NCCL_DEBUG=INFO` and `NCCL_DEBUG_FILE=ncclDebug.%h.%p` to produce one file per rank).
