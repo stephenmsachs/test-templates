@@ -42,15 +42,24 @@ async function closeOldIssues() {
 //      if (createdAt < sixMonthsAgo && updatedAt < oneMonthAgo) {
         if (createdAt < sixMinutesAgo && updatedAt < oneMinuteAgo) {
 
+        // Add a comment before closing
+        await octokit.issues.createComment({
+          owner,
+          repo,
+          issue_number: issue.number,
+          body: "This issue has been automatically closed due to inactivity.",
+          state_reason: "not_planned",
+        });
+
         await octokit.issues.update({
           owner,
           repo,
           issue_number: issue.number,
           state: "closed",
-          comment: "Closing this issue as it has been inactive for a while.",
         });
         closedCount++;
         console.log(`Closed issue #${issue.number}`);
+
         // Break out if we have closed 100 issues
         if (closedCount >= 100) {
           console.log("Closed 100 issues, stopping.");
