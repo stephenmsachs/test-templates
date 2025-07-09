@@ -11,12 +11,14 @@ body:
         
         ---
         
-        To address this issue we need some additional information.
+        To address this issue we need some additional information:
   - type: input
     id: nccl_version
     attributes:
       label: NCCL Version
-      description: "NCCL reports its version string in the debug logs. You can also determine the version if you know which library was used by running `strings libnccl.so | grep 'NCCL version'`."
+      description: |
+        NCCL reports its version string in the debug logs.
+        You can also determine the version if you know which library was used by running `strings libnccl.so | grep 'NCCL version'`.
       placeholder: "e.g. 2.27.1+cuda12.8"
     validations:
       required: true
@@ -27,10 +29,10 @@ body:
       label: Issue severity
       description: How is your workload impacted by this issue?
       options:
+        - Lower performance than expected
         - Application crash
         - Data corruption
         - Application hang
-        - Lower performance than expected
     validations:
       required: true
 
@@ -38,7 +40,9 @@ body:
     id: issue-description
     attributes:
       label: Error Message
-      description: What was the first error message in the logs? What is the expected vs. observed behaviour?
+      description: |
+        * What was the first error message in the logs?
+        * What is the expected vs. observed behaviour?
     validations:
       required: true
 
@@ -46,18 +50,18 @@ body:
     id: platform
     attributes:
       label: Which platform are you using?
-      description: Which GPU architecture, network hardware and topology are you using? Does this issue occur at a specific rank/node count?
+      description: |
+        * Which GPU architecture, network hardware and topology are you using?
+        * Does this issue occur at a specific rank/node count?
 
   - type: textarea
     id: repro
     attributes:
       label: Steps to reproduce
       description: |
-        Which steps do we need to take to reproduce this error? Please include all relevant software version numbers.
-
-        Is this an intermittent issue? If it is, how frequently does it happen?
-
-        Is there a previous passing setup, e.g. older NCCL version?
+        * Which steps do we need to take to reproduce this error? Please include all relevant software version numbers.
+        * Is this an intermittent issue? If it is, how frequently does it happen?
+        * Is there a previous passing setup, e.g. older NCCL version?
 
         The easier we can reproduce on our side the more likely we are to be able to solve it in a timely manner.
 
