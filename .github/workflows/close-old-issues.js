@@ -21,6 +21,14 @@ async function closeOldIssues() {
   let page = 1;
   let closedCount = 0;
 
+    // write a multiline comment into a variable:
+    let body = `### Issue Cleanup: Helping Us Focus on Current Challenges
+
+We're [reviewing](https://github.com/NVIDIA/nccl/discussions/1761) older issues to ensure we prioritize the most relevant and active ones. Since this issue hasn't seen updates in over 6 months, we'll be closing it for now.
+
+*This change helps us focus our efforts on addressing any current issues our users are facing.* If this issue still affects you, please don't hesitate to reopen it with a quick update (e.g., \"Still relevant on [version=X]\").
+Thanks for your understanding and for contributing to NCCL.`;
+
   while (true) {
     const { data: issues } = await octokit.issues.listForRepo({
       owner,
@@ -47,7 +55,7 @@ async function closeOldIssues() {
           owner,
           repo,
           issue_number: issue.number,
-          body: "This issue has been automatically closed due to inactivity.",
+          body: body,
         });
 
         await octokit.issues.update({
