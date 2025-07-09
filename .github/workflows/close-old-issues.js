@@ -41,12 +41,13 @@ async function closeOldIssues() {
 
 //      if (createdAt < sixMonthsAgo && updatedAt < oneMonthAgo) {
         if (createdAt < sixMinutesAgo && updatedAt < oneMinuteAgo) {
+
         await octokit.issues.update({
           owner,
           repo,
           issue_number: issue.number,
           state: "closed",
-          body: "This issue has been automatically closed due to inactivity for over 6 months.",
+          comment: "Closing this issue as it has been inactive for a while.",
         });
         closedCount++;
         console.log(`Closed issue #${issue.number}`);
