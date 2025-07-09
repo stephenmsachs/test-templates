@@ -1,7 +1,7 @@
 name: NCCL request for enhancement
 description: Request for enhancement
 title: "[RFE]: "
-labels: ["enhacement"]
+labels: ["enhancement"]
 
 body:
   - type: markdown
