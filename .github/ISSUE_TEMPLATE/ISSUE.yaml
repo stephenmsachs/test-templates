@@ -51,7 +51,7 @@ body:
     attributes:
       label: Which platform are you using?
       description: |
-        * Which GPU architecture, network hardware and topology are you using (reported by `nvidia-smi`, `nvidia-smi topo -m`, `ibstatus`)?
+        * Which GPU architecture, network hardware and topology are you using (reported by e.g. `nvidia-smi`, `nvidia-smi topo -m`, `ibstatus`)?
         * Are you running on bare-metal, containers, and/or in the cloud?
         * Does this issue occur at a specific rank/node count?
 
