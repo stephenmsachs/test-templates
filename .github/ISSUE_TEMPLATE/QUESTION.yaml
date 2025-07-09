@@ -7,13 +7,11 @@ body:
   - type: markdown
     attributes:
       value: |
-        Before reporting a new issue, please search for the behaviour in the existing issues.
-        
+        Please conduct the [NCCL UserGuide](https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/index.html) before submitting questions here.
         ---
   - type: textarea
     id: question
     attributes:
       label: Question
-      description: Please conduct the [NCCL UserGuide](https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/index.html) before submitting questions here.
     validations:
       required: true

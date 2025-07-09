@@ -7,21 +7,19 @@ body:
   - type: markdown
     attributes:
       value: |
-        Before reporting a new issue, please search for the behaviour in the existing issues.
+        Before reporting a new RFE, please search for the request in the existing issues.
         
         ---
   - type: textarea
     id: rfe-description
     attributes:
-      label: Describe feature and target
+      label: Please provide the below details to support a quick triage.
       description: |
-        What is the goal of this request?
-
-        Who will benefit from this feature? Is this request for a specific GPU architecture or network infrastructure?
-
-        How will this feature improve current workflows or processes?
-
-        What is the priority level of this request?
+        * What is the goal of this request?
+        * Who will benefit from this feature?
+        * Is this request for a specific GPU architecture or network infrastructure?
+        * How will this feature improve current workflows or processes?
+        * What is the priority level of this request?
 
     validations:
       required: true
