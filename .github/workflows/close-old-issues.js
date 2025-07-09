@@ -51,6 +51,11 @@ async function closeOldIssues() {
         });
         closedCount++;
         console.log(`Closed issue #${issue.number}`);
+        // Break out if we have closed 100 issues
+        if (closedCount >= 100) {
+          console.log("Closed 100 issues, stopping.");
+          return;
+        }
       }
     }
     page++;
