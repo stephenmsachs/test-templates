@@ -13,7 +13,15 @@ body:
   - type: textarea
     id: rfe-description
     attributes:
-      label: Describe suggested feature
-      description: Describe which feature you would like and how NCCL users will benefit from it.
+      label: Describe feature and target
+      description: |
+        What is the goal of this request?
+
+        Who will benefit from this feature? Is this request for a specific GPU architecture or network infrastructure?
+
+        How will this feature improve current workflows or processes?
+
+        What is the priority level of this request?
+
     validations:
       required: true

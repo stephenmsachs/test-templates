@@ -21,6 +21,20 @@ body:
     validations:
       required: true
 
+  - type: dropdown
+    id: type
+    attributes:
+      label: Issue severity
+      description: How is your workload impacted by this issue?
+      options:
+        - Application crash
+        - Data corruption
+        - Application hang
+        - Lower performance than expected
+      default: 0
+    validations:
+      required: true
+
   - type: textarea
     id: issue-description
     attributes:
@@ -30,14 +44,27 @@ body:
       required: true
 
   - type: textarea
+    id: platform
+    attributes:
+      label: Which platform are you using?
+      description: Which GPU architecture, network hardware and topology are you using? Does this issue occur at a specific rank/node count?
+
+  - type: textarea
     id: repro
     attributes:
       label: Steps to reproduce
-      description: Which steps do we need to take to reproduce this error? Please include all relevant software version numbers. The easier we can reproduce on our side the more likely we are to be able to solve it in a timely manner.
+      description: |
+        Which steps do we need to take to reproduce this error? Please include all relevant software version numbers.
+
+        Is this an intermittent issue? If it is, how frequently does it happen?
+
+        Is there a previous passing setup, e.g. older NCCL version?
+
+        The easier we can reproduce on our side the more likely we are to be able to solve it in a timely manner.
 
   - type: textarea
     id: log
     attributes:
       label: Debug Log Files
-      description: Please post the output of NCCL_DEBUG=info or upload log files. Ideally also set NCCL_DEBUG_FILE=ncclDebug.%h.%p to produce one file per rank.
-      render: shell
+      description: |
+        Please attach NCCL info logs (rerun workload after setting export NCCL_DEBUG=INFO and NCCL_DEBUG_FILE=ncclDebug.%h.%p to produce one file per rank).
