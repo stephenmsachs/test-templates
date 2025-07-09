@@ -6,16 +6,10 @@ const owner = process.env.REPO_OWNER;
 const repo = process.env.REPO_NAME.split('/').pop(); // Handles owner/repo format
 
 const now = new Date();
-// const sixMonthsAgo = new Date(now);
-// sixMonthsAgo.setMonth(now.getMonth() - 6);
-// const oneMonthAgo = new Date(now);
-// oneMonthAgo.setMonth(now.getMonth() - 1);
-
-// For debugging we do the smae with minutes.
-const sixMinutesAgo = new Date(now);
-sixMinutesAgo.setMinutes(now.getMinutes() - 6);
-const oneMinuteAgo = new Date(now);
-oneMinuteAgo.setMinutes(now.getMinutes() - 1);
+const sixMonthsAgo = new Date(now);
+sixMonthsAgo.setMonth(now.getMonth() - 6);
+const oneMonthAgo = new Date(now);
+oneMonthAgo.setMonth(now.getMonth() - 1);
 
 async function closeOldIssues() {
   let page = 1;
@@ -47,8 +41,7 @@ Thanks for your understanding and for contributing to NCCL.`;
       const createdAt = new Date(issue.created_at);
       const updatedAt = new Date(issue.updated_at);
 
-//      if (createdAt < sixMonthsAgo && updatedAt < oneMonthAgo) {
-        if (createdAt < sixMinutesAgo && updatedAt < oneMinuteAgo) {
+        if (createdAt < sixMonthsAgo && updatedAt < oneMonthAgo) {
 
         // Add a comment before closing
         await octokit.issues.createComment({
