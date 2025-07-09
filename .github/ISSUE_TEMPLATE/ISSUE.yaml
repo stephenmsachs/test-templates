@@ -52,6 +52,7 @@ body:
       label: Which platform are you using?
       description: |
         * Which GPU architecture, network hardware and topology are you using?
+        * Are you running on bare-metal, containers, and/or in the cloud?
         * Does this issue occur at a specific rank/node count?
 
   - type: textarea
@@ -59,7 +60,8 @@ body:
     attributes:
       label: Minimal reproducer and steps
       description: |
-        * Which steps are necessary to reproduce this error? Please include all relevant software versions.
+        * Which steps are necessary to reproduce this error? See [Minimal Bug Reports](https://matthewrocklin.com/minimal-bug-reports) for reference.
+        * Include all relevant software versions and environment variables.
         * Is this an intermittent issue? If it is, how frequently does it happen?
         * Is there a previous passing setup, e.g. older NCCL version?
 
