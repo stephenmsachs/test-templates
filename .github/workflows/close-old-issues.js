@@ -48,7 +48,6 @@ async function closeOldIssues() {
           repo,
           issue_number: issue.number,
           body: "This issue has been automatically closed due to inactivity.",
-          state_reason: "not_planned",
         });
 
         await octokit.issues.update({
@@ -56,6 +55,7 @@ async function closeOldIssues() {
           repo,
           issue_number: issue.number,
           state: "closed",
+          state_reason: "not_planned",
         });
         closedCount++;
         console.log(`Closed issue #${issue.number}`);
