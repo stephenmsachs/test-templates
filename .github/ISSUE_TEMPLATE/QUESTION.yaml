@@ -7,7 +7,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Please conduct the [NCCL UserGuide](https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/index.html) before submitting questions here.
+        Please consult the [NCCL UserGuide](https://docs.nvidia.com/deeplearning/nccl/user-guide/docs/index.html) before submitting questions here.
         ---
   - type: textarea
     id: question

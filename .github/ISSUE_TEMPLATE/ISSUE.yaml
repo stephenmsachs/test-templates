@@ -7,22 +7,11 @@ body:
   - type: markdown
     attributes:
       value: |
-        Before reporting a new issue, please search for the behaviour in the existing issues.
+        Before reporting a new issue, please search for the behaviour in the existing issues. If you found an issue and it is already closed, open a new issue and reference the old one from it.
         
         ---
         
         To address this issue we need some additional information:
-  - type: input
-    id: nccl_version
-    attributes:
-      label: NCCL Version
-      description: |
-        NCCL reports its version string in the debug logs.
-        You can also determine the version if you know which library was used by running `strings libnccl.so | grep 'NCCL version'`.
-      placeholder: "e.g. 2.27.1+cuda12.8"
-    validations:
-      required: true
-
   - type: dropdown
     id: type
     attributes:
@@ -37,23 +26,11 @@ body:
       required: true
 
   - type: textarea
-    id: issue-description
+    id: log
     attributes:
-      label: Error Message
+      label: Debug Log Files
       description: |
-        * What was the first error message in the logs?
-        * What is the expected vs. observed behaviour?
-    validations:
-      required: true
-
-  - type: textarea
-    id: platform
-    attributes:
-      label: Which platform are you using?
-      description: |
-        * Which GPU architecture, network hardware and topology are you using (reported by e.g. `nvidia-smi`, `nvidia-smi topo -m`, `ibstatus`)?
-        * Are you running on bare-metal, containers, and/or in the cloud?
-        * Does this issue occur at a specific rank/node count?
+        Please attach NCCL info logs (rerun workload after setting export `NCCL_DEBUG=INFO` and `NCCL_DEBUG_FILE=ncclDebug.%h.%p` to produce one file per rank).
 
   - type: textarea
     id: repro
@@ -67,9 +44,33 @@ body:
 
         The easier we can reproduce on our side the more likely we are to be able to solve it in a timely manner.
 
-  - type: textarea
-    id: log
+  - type: input
+    id: nccl_version
     attributes:
-      label: Debug Log Files
+      label: NCCL Version
       description: |
-        Please attach NCCL info logs (rerun workload after setting export `NCCL_DEBUG=INFO` and `NCCL_DEBUG_FILE=ncclDebug.%h.%p` to produce one file per rank).
+        NCCL reports its version string in the debug logs.
+        You can also determine the version if you know which library was used by running `strings libnccl.so | grep 'NCCL version'`.
+      placeholder: "e.g. 2.27.1+cuda12.8"
+    validations:
+      required: true
+
+  - type: textarea
+    id: platform
+    attributes:
+      label: Which platform are you using?
+      description: |
+        * Which GPU architecture, network hardware and topology are you using (reported by e.g. `nvidia-smi`, `nvidia-smi topo -m`, `ibstatus`)?
+        * Are you running on bare-metal, containers, and/or in the cloud?
+        * Does this issue occur at a specific rank/node count?
+
+  - type: textarea
+    id: issue-description
+    attributes:
+      label: Error Message
+      description: |
+        * What was the first error message in the logs (usually this line includes `NCCL WARN`)?
+        * What is the expected vs. observed behaviour?
+    validations:
+      required: true
+
