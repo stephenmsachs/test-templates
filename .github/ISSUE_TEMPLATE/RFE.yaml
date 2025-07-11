@@ -19,6 +19,3 @@ body:
         * Is this request for a specific GPU architecture or network infrastructure?
         * How will this feature improve current workflows or processes?
         * What is the priority level of this request?
-
-    validations:
-      required: true

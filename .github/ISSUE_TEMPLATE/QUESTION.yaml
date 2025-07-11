@@ -13,5 +13,3 @@ body:
     id: question
     attributes:
       label: Question
-    validations:
-      required: true

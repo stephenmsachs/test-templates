@@ -7,7 +7,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Before reporting a new issue, please search for the behaviour in the existing issues. If you found an issue and it is already closed, open a new issue and reference the old one from it.
+        Before reporting a new issue, please search for the behavior in the existing issues. If you found an issue and it is already closed, open a new issue and reference the old one from it.
         
         ---
         
@@ -70,7 +70,6 @@ body:
       label: Error Message
       description: |
         * What was the first error message in the logs (usually this line includes `NCCL WARN`)?
-        * What is the expected vs. observed behaviour?
-    validations:
-      required: true
+        * What is the expected vs. observed behavior?
+
 
