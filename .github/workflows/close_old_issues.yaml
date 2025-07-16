@@ -21,7 +21,7 @@ jobs:
           node-version: 20
 
       - name: Install dependencies
-        run: npm install @octokit/rest
+        run: npm install @octokit/rest@22.0.0
 
       - name: Run close-old-issues script
         run: node .github/workflows/close-old-issues.js
