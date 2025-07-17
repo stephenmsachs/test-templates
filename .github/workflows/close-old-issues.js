@@ -11,6 +11,12 @@ sixMonthsAgo.setMonth(now.getMonth() - 6);
 const oneMonthAgo = new Date(now);
 oneMonthAgo.setMonth(now.getMonth() - 1);
 
+const sixMinutesAgo = new Date(now);
+sixMinutesAgo.setMinutes(now.getMinutes() - 6);
+const oneMinuteAgo = new Date(now);
+oneMinuteAgo.setMinutes(now.getMinutes() - 1);
+
+
 async function closeOldIssues() {
   let page = 1;
   let closedCount = 0;
@@ -43,7 +49,7 @@ Thanks for your understanding and for contributing to NCCL.`;
       const createdAt = new Date(issue.created_at);
       const updatedAt = new Date(issue.updated_at);
 
-        if (createdAt < sixMonthsAgo && updatedAt < oneMonthAgo) {
+        if (createdAt < sixMinutesAgo && updatedAt < oneMinuteAgo) {
 
         // Add a comment before closing
         await octokit.issues.createComment({
