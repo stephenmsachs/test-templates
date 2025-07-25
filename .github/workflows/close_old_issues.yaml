@@ -1,9 +1,9 @@
 name: Close Old Issues
 
-on:
-  schedule:
-    - cron: '30 2 * * *'  # Runs daily at 02:30 UTC
-  workflow_dispatch:
+# on:
+#   schedule:
+#     - cron: '30 2 * * *'  # Runs daily at 02:30 UTC
+#   workflow_dispatch:
 
 permissions:
   issues: write
