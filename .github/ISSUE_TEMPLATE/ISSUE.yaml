@@ -43,17 +43,16 @@ body:
       label: Share Your Debug Logs
       description: |
 
-        The logs, diagnostics and topo-files are a great tool to pin down issues. You can create them by setting these environment variables before the run (copy and paste the whole block):
+        The logs, diagnostics, and topo-files are a great tool to pin down issues. You can create them by setting these environment variables before the run (copy and paste the whole block):
 
         ```
         export NCCL_DEBUG=INFO
-        export NCCL_DEBUG_FILE=ncclDebug.%h.%p
-        export NCCL_TOPO_DUMP_FILE=ncclSystem.txt
-        export NCCL_RUN_DIAGNOSTICS=
+        export NCCL_TOPO_DUMP_FILE=ncclSystem.xml
+        export NCCL_RUN_DIAGNOSTICS=1
         export NCCL_RUN_RAS_DIAGNOSTICS=1
         ```
 
-        `NCCL_DEBUG_FILE=ncclDebug.%h.%p` produces one log file per rank.
+        You can use `NCCL_DEBUG_FILE=ncclDebug.%h.%p` to produce one log file per rank in case the output is cluttered.
 
   - type: textarea
     id: repro
