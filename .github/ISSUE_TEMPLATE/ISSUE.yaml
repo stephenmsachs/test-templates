@@ -28,7 +28,7 @@ body:
       required: true
 
   - type: textarea
-    id: log
+    id: log_old
     attributes:
       label: Share Your Debug Logs
       description: |
@@ -36,6 +36,24 @@ body:
         The logs and topo-files are a great tool to pin down issues. You can create them by setting these environment variables before the run.
         * `NCCL_DEBUG=INFO` and `NCCL_DEBUG_FILE=ncclDebug.%h.%p` to produce one file per rank
         * `NCCL_TOPO_DUMP_FILE=ncclSystem.txt`
+
+  - type: textarea
+    id: log
+    attributes:
+      label: Share Your Debug Logs
+      description: |
+
+        The logs, diagnostics and topo-files are a great tool to pin down issues. You can create them by setting these environment variables before the run (copy and paste the whole block):
+
+        ```
+        export NCCL_DEBUG=INFO
+        export NCCL_DEBUG_FILE=ncclDebug.%h.%p
+        export NCCL_TOPO_DUMP_FILE=ncclSystem.txt
+        export NCCL_RUN_DIAGNOSTICS=
+        export NCCL_RUN_RAS_DIAGNOSTICS=1
+        ```
+
+        `NCCL_DEBUG_FILE=ncclDebug.%h.%p` produces one log file per rank.
 
   - type: textarea
     id: repro
